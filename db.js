@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.mongo_string+process.env.dbchat_app, error => {
+mongoose.connect('mongodb+srv://mahesh:mahi3332@cluster0.kjb1q.mongodb.net/trio?retryWrites=true&w=majority', error => {
     if (error)
         throw error
     console.log(`server is listning on +=> http://localhost:${process.env.port}/`)
