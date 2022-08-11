@@ -7,6 +7,13 @@ const dotenv = require('dotenv');
 
 exports.create = (req, res) => {
     const { firstName, lastName, email, password, mobile, dateOfBirth } = req.body
+      user.findOne({ email: email })
+        .then(() => {
+            res.json({
+                status: false,
+                message: "you already register please login"
+            })
+        })
     new user({
         firstName: firstName,
         lastName: lastName,
